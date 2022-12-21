@@ -7,6 +7,7 @@ public class Main {
 
         task1();
         task2();
+        task3();
     }
 
     public static void task1() {
@@ -14,18 +15,18 @@ public class Main {
         printYear(3061);
     }
 
-    public static boolean checkingTheYear(int year) {
-        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
-    }
-
-    public static void printYear(int year) {
-        if (checkingTheYear(year)) {
-            System.out.println(year + " Год является високосным");
-        } else {
-            System.out.println(year + " Год не является високосным");
+        public static boolean checkingTheYear(int year) {
+            return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
         }
 
-    }
+        public static void printYear(int year) {
+            if (checkingTheYear(year)) {
+                System.out.println(year + " Год является високосным");
+            } else {
+                System.out.println(year + " Год не является високосным");
+            }
+
+        }
 
     public static void task2() {
         String actualApp = clientYearDevice(2015);
@@ -50,6 +51,26 @@ public class Main {
             }
 
         }
+
+    public static void task3() {
+        String delivery = clientDistance(110);
+        System.out.println(delivery);
+    }
+
+    public static String clientDistance(int distance) {
+        if (distance <= 20) {
+            return "Доставка займет 1 сутки";
+        } else if (distance > 20 && distance <= 60) {
+            return "Доставка займет 2 суток";
+        } else if (distance > 60 && distance <= 100) {
+            return "Доставка займет 3 суток";
+        } else {
+            return "Доставка невозможна";
+        }
+
+    }
+
+
 }
 
 
