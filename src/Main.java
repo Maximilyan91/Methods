@@ -29,12 +29,12 @@ public class Main {
         }
 
     public static void task2() {
-        String actualApp = clientYearDevice(2015);
-        String actualOS = clientOS(1);
+        String actualApp = determineYearDevice(2015);
+        String actualOS = determineClientOS(1);
         System.out.println(actualApp + actualOS);
     }
 
-        public static String clientYearDevice(int yearDevice) {
+        public static String determineYearDevice(int yearDevice) {
             int currentYear = LocalDate.now().getYear();
             if (yearDevice < currentYear) {
                 return "Установите облегченную версию для";
@@ -43,7 +43,7 @@ public class Main {
             }
         }
 
-        public static String clientOS(int oS) {
+        public static String determineClientOS(int oS) {
             if (oS == 1) {
                 return " Android";
             } else {
@@ -53,23 +53,29 @@ public class Main {
         }
 
     public static void task3() {
-        String delivery = clientDistance(110);
-        System.out.println(delivery);
+        int delivery = calcDistanse(95);
+        System.out.println(outputMessage(delivery));
     }
 
-    public static String clientDistance(int distance) {
-        if (distance <= 20) {
-            return "Доставка займет 1 сутки";
-        } else if (distance > 20 && distance <= 60) {
-            return "Доставка займет 2 суток";
-        } else if (distance > 60 && distance <= 100) {
-            return "Доставка займет 3 суток";
-        } else {
-            return "Доставка невозможна";
+        public static int calcDistanse(int distance) {
+            if (distance <= 20) {
+                return 1;
+            } else if (distance > 20 && distance <= 60) {
+                return 2;
+            } else if (distance > 60 && distance <= 100) {
+                return 3;
+            } else {
+                return 0;
+            }
+    }
+
+        public static String outputMessage(int delivery) {
+            if (delivery == 0) {
+                return "Доставка невозможна!!!";
+            } else {
+                return "На доставку потребуется " + delivery + " суток";
+            }
         }
-
-    }
-
 }
 
 
