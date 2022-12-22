@@ -14,7 +14,6 @@ public class Main {
         printYear(2020);
         printYear(3061);
     }
-
         public static boolean checkingTheYear(int year) {
             return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
         }
@@ -51,12 +50,10 @@ public class Main {
             }
 
         }
-
     public static void task3() {
         int delivery = calcDistanse(95);
         System.out.println(outputMessage(delivery));
     }
-
         public static int calcDistanse(int distance) {
             if (distance <= 20) {
                 return 1;
@@ -77,16 +74,3 @@ public class Main {
             }
         }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
